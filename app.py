@@ -54,8 +54,7 @@ st.header("Part 2: Individual Input Prediction & Explanation")
 # Input fields for features
 input_data = {}
 for feature in X.columns:
-    if feature in ['Call  Failure', 'Complains', 'Subscription  Length', 'Status' 'Seconds of Use',
-                   'Frequency of use', 'Frequency of SMS', 'Distinct Called Numbers', 'Age Group', 'Age']:
+    if feature in ['CustomerID', 'Genre', 'Age', 'Annual_Income_(k$)' 'Spending_Score']:
         input_data[feature] = st.number_input(f"Enter {feature}:", value=int(X_test[feature].mean()), step=1)
     else:  # For other features, keep the original input type
         input_data[feature] = st.number_input(f"Enter {feature}:", value=X_test[feature].mean())
